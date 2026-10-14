@@ -1,0 +1,50 @@
+{
+  "scenario": "settings-timezone-tokyo",
+  "device_id": "dev1",
+  "expected": "Asia/Tokyo",
+  "verdict": "FAIL",
+  "label": "agent_mistake",
+  "direct_path": "works",
+  "agent_wrong_about_itself": 2,
+  "attempts": [
+    {
+      "repeat": 1,
+      "task_id": "task_1",
+      "status": "completed",
+      "agent_succeeded": true,
+      "termination_reason": null,
+      "steps": 7,
+      "credits_used": 3.5,
+      "read_value": "Europe/Berlin",
+      "result": "FAIL",
+      "note": ""
+    },
+    {
+      "repeat": 2,
+      "task_id": "task_2",
+      "status": "completed",
+      "agent_succeeded": true,
+      "termination_reason": null,
+      "steps": 7,
+      "credits_used": 3.5,
+      "read_value": "Asia/Tokyo",
+      "result": "PASS",
+      "note": ""
+    },
+    {
+      "repeat": 3,
+      "task_id": "task_3",
+      "status": "completed",
+      "agent_succeeded": true,
+      "termination_reason": null,
+      "steps": 7,
+      "credits_used": 3.5,
+      "read_value": "Europe/Berlin",
+      "result": "FAIL",
+      "note": ""
+    }
+  ],
+  "notes": []
+}
+
+VERDICT: FAIL  LABEL: agent_mistake

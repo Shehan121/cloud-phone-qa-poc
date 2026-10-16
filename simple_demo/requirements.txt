@@ -1,0 +1,2 @@
+# only needed for --agent claude; the tour needs nothing
+anthropic

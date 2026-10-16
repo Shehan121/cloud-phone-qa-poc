@@ -1,5 +1,7 @@
 # Mobilerun QA check (proof of concept)
 
+> New here? Start with [`simple_demo/`](simple_demo/): one file, no cloud phone, shows the whole idea in a few seconds with `python demo.py`.
+
 This is a small proof of concept for my design doc "QA Agent for Mobilerun". It runs one scenario end to end the way the design describes it.
 
 The Mobilerun agent does a task on a cloud phone and then a separate checker reads the real state of the phone through the Mobilerun API and compares it with the expected value. The agent's own `succeeded` is recorded but never used as the verdict.

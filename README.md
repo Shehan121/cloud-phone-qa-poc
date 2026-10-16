@@ -9,6 +9,8 @@ cd simple_demo
 python demo.py
 ```
 
+Screenshots of the runs and what each one shows are in [simple_demo/RESULTS.md](simple_demo/RESULTS.md).
+
 ## The rules
 
 - the agent runs every task 3 times

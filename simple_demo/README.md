@@ -48,3 +48,7 @@ Claude gets three tools , look at the screen , change a setting and finish. What
 - agent.run : POST /tasks to the Mobilerun agent
 - read_setting : GET /devices/{id}/timezone or ui-state
 - direct path : POST /devices/{id}/tap and the other direct device calls
+
+## Results
+
+Screenshots of the runs and a short explanation of each are in [RESULTS.md](RESULTS.md).

@@ -49,6 +49,16 @@ python demo.py --agent honest --broken wifi
 
 The agent does the job but the phone stays off. So Wi-Fi is a PRODUCT BUG.
 
+## 5. Claude as the agent , Wi-Fi broken
+
+```bash
+python demo.py --agent claude --broken wifi
+```
+
+![claude](screenshots/05_claude_wifi_broken.png)
+
+This is the real Claude API , not a fake agent. Wi-Fi is a PRODUCT BUG , Claude saw the setting didn't change and said it failed ( `NNN` ). Dark theme and time zone are PASS. WhatsApp is CAN'T TELL , Claude said it couldn't do it ( `NNN` ) and the checker can't read it anyway.
+
 ## Not tested
 
-Claude as the agent ( `--agent claude` ) needs a real API key , so it is not here. The phone is fake too , so nothing talks to a real Mobilerun phone.
+The phone is fake , so nothing here talks to a real Mobilerun phone.

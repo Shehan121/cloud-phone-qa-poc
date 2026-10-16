@@ -1,14 +1,9 @@
 """
-Simple demo of the QA idea from my design doc.
+Simple demo of my QA idea : the agent does a task on a phone , then a separate
+checker looks at the phone itself. The agent never grades its own work.
 
-The whole idea in one sentence:
-    an agent does a task on a phone, and then a separate checker looks at the
-    phone itself, so the agent never gets to grade its own work.
-
-There is no real cloud phone here. The "phone" is a small Python object with
-a few settings, so this runs on any laptop for free. The agent is borrowed:
-either Claude (if you have an Anthropic API key) or a few fake agents that
-behave in fixed ways (honest, liar, flaky) so you can see every outcome.
+The phone is fake (a Python object) so this runs on any laptop. The agent is
+borrowed , Claude or one of three fake agents (honest , liar , flaky).
 
 Run:
     python demo.py                 # tour: shows every outcome with fake agents

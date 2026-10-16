@@ -92,6 +92,9 @@ class ClaudeAgent:
 
     def __init__(self):
         import anthropic  # only needed for this agent
+        key = os.environ.get("ANTHROPIC_API_KEY", "")
+        if not key.startswith("sk-ant-") or key.endswith("..."):
+            raise SystemExit("Set a real key first: export ANTHROPIC_API_KEY=<your key from console.anthropic.com>")
         self.client = anthropic.Anthropic()
         self.model = os.environ.get("CLAUDE_MODEL", "claude-haiku-5-5")
 
@@ -168,7 +171,12 @@ if __name__ == "__main__":
 
     if a.agent or a.broken:  # --broken on its own uses the honest agent
         name = a.agent or "honest"
-        report(name, AGENTS[name](), a.broken)
+        try:
+            report(name, AGENTS[name](), a.broken)
+        except Exception as e:  # e.g. a wrong API key or no credits, show it in one line
+            if type(e).__module__.startswith("anthropic"):
+                raise SystemExit(f"Claude API error: {e}")
+            raise
     else:  # the tour: one situation for every label
         report("honest", HonestAgent(), [])          # everything works -> PASS
         report("honest", HonestAgent(), ["wifi"])    # phone is broken -> PRODUCT BUG

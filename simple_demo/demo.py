@@ -51,7 +51,7 @@ SCENARIOS = [
 
 
 # --------------------------------------------------------------- the agents
-# Every agent has the same shape: run(task, phone, attempt) -> (says_success, message)
+# Every agent has the same shape: run(scenario, phone, attempt) -> (says_success, message)
 
 class HonestAgent:
     """Fake agent that really does the task."""
@@ -166,8 +166,9 @@ if __name__ == "__main__":
     p.add_argument("--broken", nargs="*", default=[], help="settings that are broken, e.g. wifi")
     a = p.parse_args()
 
-    if a.agent:
-        report(a.agent, AGENTS[a.agent](), a.broken)
+    if a.agent or a.broken:  # --broken on its own uses the honest agent
+        name = a.agent or "honest"
+        report(name, AGENTS[name](), a.broken)
     else:  # the tour: one situation for every label
         report("honest", HonestAgent(), [])          # everything works -> PASS
         report("honest", HonestAgent(), ["wifi"])    # phone is broken -> PRODUCT BUG
